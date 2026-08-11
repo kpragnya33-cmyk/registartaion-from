@@ -21,7 +21,7 @@
 
         <!-- Phone Number -->
         <label for="phone">Phone Number:</label><br>
-        <input type="tel" id="phone" name="phone" maxlength="10" required><br><br>
+        <input type="tel" id="mobile" name="mobile" maxlength="10" required><br><br>
 
         <!-- Email -->
         <label for="email">Email:</label><br>
