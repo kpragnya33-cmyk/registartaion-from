@@ -3,59 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Registration Form</title>
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h2 align="center">Event Registration Form</h2>
+<div class="container">
+    <h2>Student Registration Form</h2>
 
-    <form action="#" method="post">
+    <form>
+        <!-- Name -->
+        <div class="form-group">
+            <label for="name">Name <span class="required">*</span></label>
+            <input type="text" id="name" name="name" required>
+        </div>
 
-        <!-- Full Name -->
-        <label for="name">Full Name:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
-
-        <!-- Father's Name -->
-        <label for="fathername">Father's Name:</label><br>
-        <input type="text" id="fathername" name="fathername" required><br><br>
+        <!-- Date of Birth -->
+        <div class="form-group">
+            <label for="dob">Date of Birth <span class="required">*</span></label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
 
         <!-- Phone Number -->
-        <label for="phone">Phone Number:</label><br>
-        <input type="tel" id="mobile" name="mobile" maxlength="10" required><br><br>
+        <div class="form-group">
+            <label for="phone">Phone Number <span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+
+        <!-- College -->
+        <div class="form-group">
+            <label for="college">College <span class="required">*</span></label>
+            <input type="text" id="college" name="college" required>
+        </div>
+
+        <!-- Father's Name -->
+        <div class="form-group">
+            <label for="father">Father's Name</label>
+            <input type="text" id="father" name="father">
+        </div>
 
         <!-- Email -->
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+        </div>
 
-        <!-- Event -->
-        <label for="event">Select Event:</label><br>
-        <select id="event" name="event">
-            <option value="">--Select Event--</option>
-            <option value="Workshop">Workshop</option>
-            <option value="Seminar">Seminar</option>
-            <option value="Conference">Conference</option>
-            <option value="Hackathon">Hackathon</option>
-        </select><br><br>
-
-        <!-- Gender -->
-        <label>Gender:</label><br>
-        <input type="radio" id="male" name="gender" value="Male">
-        <label for="male">Male</label>
-
-        <input type="radio" id="female" name="gender" value="Female">
-        <label for="female">Female</label><br><br>
-
-        <!-- Address -->
-        <label for="address">Address:</label><br>
-        <textarea id="address" name="address" rows="4" cols="30"></textarea><br><br>
-
-        <!-- Register Button -->
-        <input type="submit" value="Register">
-
-        <!-- Reset Button -->
-        <input type="reset" value="Clear">
-
+        <button type="submit">Register</button>
     </form>
+</div>
 
 </body>
 </html>
