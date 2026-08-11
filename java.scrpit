@@ -3,54 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Registration Form</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Event Registration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            width: 400px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #message {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d4edda;
+            color: #155724;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
 
 <div class="container">
-    <h2>Student Registration Form</h2>
+    <h2>Event Registration</h2>
 
-    <form>
-        <!-- Name -->
-        <div class="form-group">
-            <label for="name">Name <span class="required">*</span></label>
-            <input type="text" id="name" name="name" required>
-        </div>
+    <form id="registrationForm">
 
-        <!-- Date of Birth -->
-        <div class="form-group">
-            <label for="dob">Date of Birth <span class="required">*</span></label>
-            <input type="date" id="dob" name="dob" required>
-        </div>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
 
-        <!-- Phone Number -->
-        <div class="form-group">
-            <label for="phone">Phone Number <span class="required">*</span></label>
-            <input type="tel" id="phone" name="phone" required>
-        </div>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
 
-        <!-- College -->
-        <div class="form-group">
-            <label for="college">College <span class="required">*</span></label>
-            <input type="text" id="college" name="college" required>
-        </div>
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number" required>
 
-        <!-- Father's Name -->
-        <div class="form-group">
-            <label for="father">Father's Name</label>
-            <input type="text" id="father" name="father">
-        </div>
+        <label for="event">Select Event</label>
+        <select id="event" required>
+            <option value="">-- Select Event --</option>
+            <option value="Web Development Workshop">Web Development Workshop</option>
+            <option value="JavaScript Seminar">JavaScript Seminar</option>
+            <option value="Coding Competition">Coding Competition</option>
+            <option value="Tech Conference">Tech Conference</option>
+        </select>
 
-        <!-- Email -->
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email">
-        </div>
+        <label for="attendees">Number of Attendees</label>
+        <input type="number" id="attendees" min="1" max="10" value="1" required>
 
-        <button type="submit">Register</button>
+        <button type="submit">Register Now</button>
+
     </form>
+
+    <div id="message"></div>
 </div>
+
+<script>
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        // Get form values
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let phone = document.getElementById("phone").value;
+        let selectedEvent = document.getElementById("event").value;
+        let attendees = document.getElementById("attendees").value;
+
+        // Display registration message
+        let message = document.getElementById("message");
+
+        message.style.display = "block";
+
+        message.innerHTML =
+            "<strong>Registration Successful!</strong><br><br>" +
+            "Name: " + name + "<br>" +
+            "Email: " + email + "<br>" +
+            "Phone: " + phone + "<br>" +
+            "Event: " + selectedEvent + "<br>" +
+            "Attendees: " + attendees;
+
+        // Clear form
+        document.getElementById("registrationForm").reset();
+    });
+</script>
 
 </body>
 </html>
